@@ -1,5 +1,6 @@
 import Banner from "@/components/Banner";
 import FeatureCars from "@/components/FeatureCars";
+import ReviewSection from "@/components/ReviewSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Banner />
       <FeatureCars />
       <WhyChooseUs />
+      <ReviewSection />
     </>
   );
 }
