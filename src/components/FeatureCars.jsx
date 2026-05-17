@@ -7,7 +7,9 @@ const FeatureCars = async () => {
     <section className="py-10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex flex-col items-center justify-center space-y-3">
-          <h2 className="font-bold text-4xl">Featured Vehicles</h2>
+          <h2 className="font-bold text-4xl">
+            Featured <span className="text-blue-500">Vehicles</span>
+          </h2>
           <p className="text-neutral-500 font-semibold ">
             Explore our selection of premium vehicles available for your next
             adventure.
