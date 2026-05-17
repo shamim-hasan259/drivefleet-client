@@ -32,14 +32,11 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-gray-100 bg-white shadow-sm">
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between  h-20 ">
-        {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <h1 className="text-3xl font-bold tracking-wide text-black">
             DriveFleet
           </h1>
         </Link>
-
-        {/* DESKTOP MENU */}
         <div className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => {
             const isActive = pathname === item.path;
@@ -55,35 +52,30 @@ const Navbar = () => {
                 }`}
               >
                 {item.name}
-
-                {/* ACTIVE LINE */}
               </Link>
             );
           })}
         </div>
 
-        {/* DESKTOP BUTTON */}
         <div className="hidden items-center gap-3 md:flex">
           <Link href="/login">
-            <button className="rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-black transition duration-300 hover:bg-gray-100">
+            <button className="rounded-full border border-gray-300 px-5 py-2  font-bold text-black transition duration-300 hover:bg-blue-600 hover:text-white cursor-pointer">
               Login
             </button>
           </Link>
 
           <Link href="/register">
-            <button className="rounded-full bg-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-md transition duration-300 hover:scale-105">
+            <button className="rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
               Register
             </button>
           </Link>
         </div>
 
-        {/* MOBILE BUTTON */}
         <button onClick={() => setOpen(!open)} className="text-black md:hidden">
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* MOBILE MENU */}
       {open && (
         <div className="border-t border-gray-100 bg-white shadow-md md:hidden">
           <div className="flex flex-col gap-5 px-5 py-6">
@@ -106,13 +98,13 @@ const Navbar = () => {
 
             <div className="flex flex-col gap-3 pt-3">
               <Link href="/login">
-                <button className="w-full rounded-full border border-gray-300 py-2 font-medium text-black">
+                <button className=" w-full rounded-full border border-gray-300 px-5 py-2 font-bold text-black transition duration-300 hover:bg-blue-600 hover:text-white cursor-pointer">
                   Login
                 </button>
               </Link>
 
               <Link href="/register">
-                <button className="w-full rounded-full bg-black py-2 font-semibold text-white shadow-md">
+                <button className=" w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
                   Register
                 </button>
               </Link>

@@ -76,7 +76,7 @@ const Banner = () => {
             alt="Luxury Car"
             width={600}
             height={500}
-            className="w-full z-10 rounded-[30px] "
+            className="w-full object-cover"
           />
         </motion.div>
       </div>
