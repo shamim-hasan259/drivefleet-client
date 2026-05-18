@@ -8,9 +8,10 @@ import carImage from "../assets/main_car-hpkzbezO.png";
 const Banner = () => {
   return (
     <section className="overflow-hidden bg-white">
-      <div className="container mx-auto grid min-h-[90vh] items-center gap-14 px-4 py-16 md:grid-cols-2 md:px-8">
+      <div className="container mx-auto min-h-[90vh] flex flex-col md:flex-row justify-between  items-center gap-14 px-4 py-16  md:px-8">
         {/* LEFT SIDE */}
         <motion.div
+          className="flex-1"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
@@ -28,9 +29,10 @@ const Banner = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl font-black leading-tight text-blue-600 md:text-6xl"
+            className="text-3xl font-bold leading-tight md:text-6xl"
           >
-            Find The Perfect Car For Every Journey
+            Find The Perfect Car{" "}
+            <span className="text-blue-600 "> For Every Journey</span>
           </motion.h1>
 
           <motion.p
@@ -68,7 +70,7 @@ const Banner = () => {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7 }}
-          className="relative flex justify-center"
+          className="relative flex-1"
         >
           {/* IMAGE FIXED */}
           <Image

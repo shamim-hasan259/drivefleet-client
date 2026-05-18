@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Users, Car } from "lucide-react";
+
 const CarsCard = ({ car }) => {
   const {
     carName,
@@ -12,6 +14,7 @@ const CarsCard = ({ car }) => {
     pickupLocation,
     description,
     availabilityStatus,
+    _id,
   } = car;
 
   return (
@@ -24,13 +27,13 @@ const CarsCard = ({ car }) => {
       className="group overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm flex flex-col h-full"
     >
       <div className="relative h-60 w-full overflow-hidden">
-        <motion.img
-          src={image}
-          alt={carName}
-          className="h-full w-full object-cover"
+        <motion.div
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.4 }}
-        />
+          className="h-full w-full"
+        >
+          <Image src={image} alt={carName} fill className="object-cover" />
+        </motion.div>
 
         <span
           className={`absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold text-white ${
@@ -78,7 +81,7 @@ const CarsCard = ({ car }) => {
         </div>
 
         <div className="mt-6">
-          <Link href="#">
+          <Link href={`/car/${_id}`}>
             <motion.button
               whileTap={{ scale: 0.95 }}
               whileHover={{ scale: 1.02 }}
