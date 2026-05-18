@@ -1,7 +1,10 @@
+const dns = require("node:dns");
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -17,7 +20,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`h-full antialiased`}>
       <body className={`min-h-full flex flex-col ${outfit.className}`}>
         <Navbar />
-        <main>{children}</main>
+        <main>
+          {children}
+          <Toaster />
+        </main>
         <Footer />
       </body>
     </html>
