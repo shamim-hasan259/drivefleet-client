@@ -1,6 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Avatar, Dropdown } from "@heroui/react";
+import { Avatar, Dropdown, Button } from "@heroui/react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 const DropDown = ({ user }) => {
@@ -20,7 +20,9 @@ const DropDown = ({ user }) => {
         <Dropdown.Popover>
           <Dropdown.Menu>
             <Dropdown.Item>
-              <Link href="/my-bookings">My Bookings</Link>
+              <Link className="w-full" href="/my-bookings">
+                My Bookings
+              </Link>
             </Dropdown.Item>
             <Dropdown.Item>
               <Link className="w-full" href="/add-car">
@@ -32,8 +34,14 @@ const DropDown = ({ user }) => {
                 My Added Cars
               </Link>
             </Dropdown.Item>
-            <Dropdown.Item variant="danger">
-              <button onClick={handleLogout}>Logout</button>
+            <Dropdown.Item>
+              <Button
+                variant="danger"
+                className="w-full text-left"
+                onClick={handleLogout}
+              >
+                Logout
+              </Button>
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown.Popover>

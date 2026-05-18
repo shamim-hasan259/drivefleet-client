@@ -14,11 +14,13 @@ import { signOut } from "better-auth/api";
 import { Eye, EyeOff, User } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
