@@ -4,12 +4,14 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import { useSession } from "@/lib/auth-client";
+import DropDown from "./DropDown";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const pathname = usePathname();
-
+  const { data } = useSession();
+  const user = data?.user;
   const navItems = [
     {
       name: "Home",
@@ -58,17 +60,15 @@ const Navbar = () => {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Link href="/login">
-            <button className="rounded-full border border-gray-300 px-5 py-2  font-bold text-black transition duration-300 hover:bg-blue-600 hover:text-white cursor-pointer">
-              Login
-            </button>
-          </Link>
-
-          <Link href="/register">
-            <button className="rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
-              Register
-            </button>
-          </Link>
+          {user ? (
+            <DropDown user={user} />
+          ) : (
+            <Link href="/login">
+              <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
 
         <button onClick={() => setOpen(!open)} className="text-black md:hidden">
@@ -97,17 +97,15 @@ const Navbar = () => {
             })}
 
             <div className="flex flex-col gap-3 pt-3">
-              <Link href="/login">
-                <button className=" w-full rounded-full border border-gray-300 px-5 py-2 font-bold text-black transition duration-300 hover:bg-blue-600 hover:text-white cursor-pointer">
-                  Login
-                </button>
-              </Link>
-
-              <Link href="/register">
-                <button className=" w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
-                  Register
-                </button>
-              </Link>
+              {user ? (
+                <DropDown user={user} />
+              ) : (
+                <Link href="/login">
+                  <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
+                    Login
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </div>

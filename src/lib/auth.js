@@ -8,8 +8,8 @@ const db = client.db("carBooking-system");
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client,
-    emailAndPassword: {
-      enabled: true,
-    },
   }),
+  emailAndPassword: {
+    enabled: true,
+  },
 });

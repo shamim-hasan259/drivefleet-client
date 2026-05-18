@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import carImage from "../assets/main_car-hpkzbezO.png";
+import carImage from "../assets/photo-1503376780353-7e6692767b70.webp";
 
 const Banner = () => {
   return (
