@@ -30,6 +30,13 @@ const LoginPage = () => {
     }
     toast.error(`${error.message}`);
   };
+
+  const googleLogin = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+    toast.success("login successfully");
+  };
   return (
     <div className="max-w-7xl mx-auto py-20">
       <div className="rounded-full flex flex-col justify-center items-center ">
@@ -111,7 +118,7 @@ const LoginPage = () => {
           </div>
           <button
             className="flex items-center justify-center w-full px-4 py-2 bg-slate-200 text-black rounded-full cursor-pointer hover:bg-slate-300 transition duration-300"
-            // onClick={googleLogin}
+            onClick={googleLogin}
           >
             <FcGoogle className="me-2 size-5" />
             Login with google

@@ -14,13 +14,11 @@ import { signOut } from "better-auth/api";
 import { Eye, EyeOff, User } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -34,6 +32,12 @@ const RegisterPage = () => {
       redirect("/login");
     }
     toast.error(`${error.message}`);
+  };
+  const googleLogin = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+    toast.success("login successfully");
   };
   return (
     <div className="max-w-7xl mx-auto py-20">
@@ -151,7 +155,7 @@ const RegisterPage = () => {
           </div>
           <button
             className="flex items-center justify-center w-full px-4 py-2 bg-slate-200 text-black rounded-full cursor-pointer hover:bg-slate-300 transition duration-300"
-            // onClick={googleLogin}
+            onClick={googleLogin}
           >
             <FcGoogle className="me-2 size-5" />
             Login with google

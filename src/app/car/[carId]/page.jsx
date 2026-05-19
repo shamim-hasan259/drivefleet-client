@@ -12,7 +12,6 @@ const CarDetailsPage = async ({ params }) => {
 
   const {
     carName,
-    dailyRentPrice,
     carType,
     image,
     seatCapacity,
