@@ -30,7 +30,7 @@ const DropDown = ({ user }) => {
               </Link>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Link className="w-full" href="/added-car">
+              <Link className="w-full" href="/my-added-car">
                 My Added Cars
               </Link>
             </Dropdown.Item>

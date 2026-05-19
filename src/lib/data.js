@@ -9,7 +9,6 @@ export const createCar = async (car) => {
   const { data } = await res.json();
   return data;
 };
-
 export const getFeatureCars = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/available`);
   const cars = await res.json();

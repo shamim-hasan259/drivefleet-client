@@ -12,10 +12,7 @@ import {
   ListBox,
 } from "@heroui/react";
 import { redirect } from "next/navigation";
-
-import React from "react";
 import toast from "react-hot-toast";
-
 const AddCarPage = () => {
   const handleCreateCar = async (e) => {
     e.preventDefault();
