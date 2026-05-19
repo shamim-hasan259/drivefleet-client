@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { createCar } from "@/lib/data";
 import {
   Button,
@@ -18,7 +19,8 @@ const AddCarPage = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const carData = await createCar({ ...data });
+    const { data: token } = await authClient.token();
+    const carData = await createCar({ ...data }, token);
     if (carData) {
       toast.success(`car created successfully`);
       redirect("/");

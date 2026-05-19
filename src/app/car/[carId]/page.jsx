@@ -3,10 +3,15 @@ import Image from "next/image";
 import { MapPin, Users, BadgeCheck, CarFront, Wallet } from "lucide-react";
 import Link from "next/link";
 import BookingCard from "@/components/BookingCard";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const CarDetailsPage = async ({ params }) => {
   const { carId } = await params;
-  const { car } = await getSingleCar(carId);
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  const { car } = await getSingleCar(carId, token);
 
   const {
     carName,

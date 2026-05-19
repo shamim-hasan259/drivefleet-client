@@ -1,8 +1,9 @@
-export const createCar = async (car) => {
+export const createCar = async (car, token) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(car),
   });
@@ -20,8 +21,37 @@ export const getAllCars = async () => {
   return cars;
 };
 
-export const getSingleCar = async (id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars/${id}`);
+export const getSingleCar = async (id, token) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars/${id}`, {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+  });
   const car = await res.json();
   return car;
+};
+
+// booking api
+
+export const createBooking = async (bookingData, token) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/booking`, {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(bookingData),
+  });
+  const { data } = await res.json();
+  return data;
+};
+export const getAllBooking = async (token) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/booking`, {
+    headers: {
+      "content-type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  });
+  const { data } = await res.json();
+  return data;
 };
