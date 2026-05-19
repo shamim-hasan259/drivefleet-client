@@ -6,9 +6,7 @@ import BookingCard from "@/components/BookingCard";
 
 const CarDetailsPage = async ({ params }) => {
   const { carId } = await params;
-
   const { car } = await getSingleCar(carId);
-  console.log(car);
 
   const {
     carName,
@@ -23,7 +21,9 @@ const CarDetailsPage = async ({ params }) => {
   return (
     <section className="min-h-screen bg-slate-50 py-10">
       <div className="container mx-auto px-4 md:px-8">
-        <Link href="/">Back to home</Link>
+        <Link className="text-blue-600 font-medium" href="/">
+          ← Back to home
+        </Link>
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Left Side */}
           <div className="space-y-6 lg:col-span-2">
