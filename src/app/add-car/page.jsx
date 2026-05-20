@@ -43,7 +43,6 @@ const AddCarPage = () => {
               <TextField name="carName" isRequired>
                 <Label>Car Name</Label>
                 <Input placeholder="Tesla Model S" className="rounded-2xl" />
-
                 <FieldError />
               </TextField>
             </div>

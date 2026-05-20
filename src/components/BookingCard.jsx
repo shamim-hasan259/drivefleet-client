@@ -1,9 +1,11 @@
 "use client";
 import { authClient, useSession } from "@/lib/auth-client";
 import { createBooking } from "@/lib/data";
-import { TextArea, Select, ListBox, Label } from "@heroui/react";
+import { TextArea } from "@heroui/react";
 import { Wallet } from "lucide-react";
+import { redirect } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 const BookingCard = ({ car }) => {
   const [driver, setDriver] = useState("");
   const [notes, setNotes] = useState("");
@@ -12,7 +14,6 @@ const BookingCard = ({ car }) => {
   const { dailyRentPrice, carType } = car;
   const handleBooking = async () => {
     const { data: token } = await authClient.token();
-    console.log(token);
     const bookingData = {
       name: user?.name,
       email: user?.email,
@@ -21,7 +22,10 @@ const BookingCard = ({ car }) => {
       ...car,
     };
     const res = await createBooking(bookingData, token);
-    console.log(res);
+    if (res.status) {
+      toast.success(`${res.message}`);
+      redirect("/my-bookings");
+    }
   };
   return (
     <div>
