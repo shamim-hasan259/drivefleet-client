@@ -71,7 +71,7 @@ const AddedBook = ({ car }) => {
             </h2>
             <div className="flex gap-3 items-center">
               <EditModal car={car} />
-              <DeleModal />
+              <DeleModal car={car} />
             </div>
           </div>
         </div>

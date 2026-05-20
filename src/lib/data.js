@@ -56,6 +56,7 @@ export const updatedCar = async (id, token, data) => {
 
 export const deleteCar = async (id, token) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars/${id}`, {
+    method: "DELETE",
     headers: {
       authorization: `Bearer ${token}`,
     },

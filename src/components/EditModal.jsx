@@ -160,6 +160,7 @@ const EditModal = ({ car }) => {
                     </TextField>
                     <div>
                       <Button
+                        slot="close"
                         className="w-full"
                         type="submit"
                         variant="secondary"
