@@ -8,7 +8,9 @@ import { redirect } from "next/navigation";
 const DeleModal = ({ car }) => {
   const { _id, carName } = car;
   const handleDeleCar = async () => {
-    const { data: token } = await authClient.token();
+    const {
+      data: { token },
+    } = await authClient.token();
     const res = await deleteCar(_id, token);
     console.log(res);
     if (res.data.deletedCount > 0) {

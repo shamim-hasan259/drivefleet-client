@@ -21,7 +21,9 @@ const EditModal = ({ car }) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const { data: token } = await authClient.token();
+    const {
+      data: { token },
+    } = await authClient.token();
     const res = await updatedCar(_id, token, { ...data });
     if (res.status) {
       toast.success(`${res.message}`);
