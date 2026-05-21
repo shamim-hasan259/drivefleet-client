@@ -21,6 +21,7 @@ const BookingCard = ({ car }) => {
     const bookingData = {
       name: user?.name,
       email: user?.email,
+      date: new Date(),
       driver,
       notes,
       ...car,

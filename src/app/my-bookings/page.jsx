@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MapPin, Users } from "lucide-react";
+import { ClockCheck, MapPin, Users } from "lucide-react";
 import { getAllBooking } from "@/lib/data";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
@@ -82,6 +82,10 @@ const MyBookingsCarPage = async () => {
                         <Users size={20} className="text-blue-600" />
 
                         <span>{bookCar.seatCapacity} Seats</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-neutral-700">
+                        <ClockCheck className="text-blue-600" />
+                        <span>Time {bookCar.date} </span>
                       </div>
                     </div>
                   </div>

@@ -51,7 +51,7 @@ const AddCarPage = () => {
             <TextField name="dailyRentPrice" type="number" isRequired>
               <Label>Daily Rent Price</Label>
 
-              <Input type="number" placeholder="120" className="rounded-2xl" />
+              <Input type="number" placeholder="0" className="rounded-2xl" />
               <FieldError />
             </TextField>
             <div>
