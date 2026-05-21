@@ -15,6 +15,7 @@ export const getAddedCar = async (token) => {
     headers: {
       authorization: `Bearer ${token}`,
     },
+    cache: "no-store",
   });
   const data = await res.json();
   return data;
