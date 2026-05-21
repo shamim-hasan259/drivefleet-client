@@ -7,7 +7,7 @@ export const createCar = async (car, token) => {
     },
     body: JSON.stringify(car),
   });
-  const { data } = await res.json();
+  const data = await res.json();
   return data;
 };
 export const getAddedCar = async (token) => {
@@ -72,7 +72,7 @@ export const createBooking = async (bookingData, token) => {
       "content-type": "application/json",
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookingData),
+    body: JSON.stringify({ bookingData }),
   });
   const data = await res.json();
   return data;

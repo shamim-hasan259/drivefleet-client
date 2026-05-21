@@ -17,7 +17,6 @@ import toast from "react-hot-toast";
 import { redirect } from "next/navigation";
 const EditModal = ({ car }) => {
   const { _id, dailyRentPrice, description, image, pickupLocation } = car;
-
   const handleEditCar = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);

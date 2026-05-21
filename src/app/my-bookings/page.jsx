@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { MapPin, Users } from "lucide-react";
 import { getAllBooking } from "@/lib/data";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const MyBookingsCarPage = async () => {
-  const data = await getAllBooking();
+  const { token } = await auth.api.getToken({
+    headers: await headers(),
+  });
+  console.log(token);
+  const data = await getAllBooking(token);
+  console.log(data);
 
   return (
     <section className="py-10 bg-neutral-50 min-h-screen">

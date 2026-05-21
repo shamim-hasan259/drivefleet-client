@@ -32,10 +32,13 @@ const LoginPage = () => {
   };
 
   const googleLogin = async () => {
-    await authClient.signIn.social({
+    const { data, error } = await authClient.signIn.social({
       provider: "google",
     });
-    toast.success("login successfully");
+    if (data) {
+      toast.success("login successfully");
+    }
+    toast.error(`${error.message}`);
   };
   return (
     <div className="max-w-7xl mx-auto py-20">
