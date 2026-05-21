@@ -14,7 +14,9 @@ const BookingCard = ({ car }) => {
   const { dailyRentPrice, carType } = car;
   const handleBooking = async (e) => {
     e.preventDefault();
-    const { data: token } = await authClient.token();
+    const {
+      data: { token },
+    } = await authClient.token();
     console.log(token);
     const bookingData = {
       name: user?.name,

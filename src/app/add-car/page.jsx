@@ -18,7 +18,9 @@ const AddCarPage = () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    const { data: token } = await authClient.token();
+    const {
+      data: { token },
+    } = await authClient.token();
     console.log(token);
     const carData = await createCar(data, token);
     console.log("data resolve promise", carData);
