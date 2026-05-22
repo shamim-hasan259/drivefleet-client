@@ -4,10 +4,6 @@ A full-stack Car Rental Platform where users can explore cars, book vehicles, an
 
 ---
 
-## 🔗 Live Links
-- 🌐 Live Site: https://your-live-site-url.com  
-- 💻 Client Repo: https://github.com/your-client-repo  
-- 🖥️ Server Repo: https://github.com/your-server-repo  
 
 ---
 
