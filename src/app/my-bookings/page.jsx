@@ -84,7 +84,7 @@ const MyBookingsCarPage = async () => {
                       </div>
                       <div className="flex items-center gap-2 text-neutral-700">
                         <ClockCheck className="text-blue-600" />
-                        <span>Time {bookCar.date} </span>
+                        <span>{new Date(bookCar.date).toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
