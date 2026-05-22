@@ -47,7 +47,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 href={item.path}
-                className={`relative font-bold transition duration-300 ${
+                className={`relative font-medium text-sm transition duration-300 ${
                   isActive
                     ? "text-blue-600"
                     : "text-gray-500 hover:text-blue-600"
@@ -64,7 +64,7 @@ const Navbar = () => {
             <DropDown user={user} />
           ) : (
             <Link href="/login">
-              <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
+              <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-medium text-sm text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
                 Login
               </button>
             </Link>
@@ -101,7 +101,7 @@ const Navbar = () => {
                 <DropDown user={user} />
               ) : (
                 <Link href="/login">
-                  <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-bold text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
+                  <button className="w-full rounded-full bg-blue-700 px-5 py-2 font-medium text-sm text-white shadow-md transition duration-300 hover:scale-105 cursor-pointer">
                     Login
                   </button>
                 </Link>

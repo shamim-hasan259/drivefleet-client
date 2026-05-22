@@ -21,9 +21,8 @@ const AddCarPage = () => {
     const {
       data: { token },
     } = await authClient.token();
-    console.log(token);
-    const carData = await createCar(data, token);
-    console.log("data resolve promise", carData);
+    const carData = await createCar({ ...data }, token);
+    // console.log("data resolve promise", carData);
     if (carData) {
       toast.success(`car created successfully`);
       redirect("/");
@@ -38,7 +37,6 @@ const AddCarPage = () => {
             Add your car details and make it available for booking.
           </p>
         </div>
-
         <form onSubmit={handleCreateCar} className="p-6 md:p-10 space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="md:col-span-2">

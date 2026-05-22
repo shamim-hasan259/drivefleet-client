@@ -1,6 +1,6 @@
 import { getSingleCar } from "@/lib/data";
 import Image from "next/image";
-import { MapPin, Users, BadgeCheck, CarFront, Wallet } from "lucide-react";
+import { MapPin, Users, BadgeCheck } from "lucide-react";
 import Link from "next/link";
 import BookingCard from "@/components/BookingCard";
 import { auth } from "@/lib/auth";

@@ -11,7 +11,7 @@ export const createCar = async (car, token) => {
   return data;
 };
 export const getAddedCar = async (token) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/my-added-cars`, {
     headers: {
       authorization: `Bearer ${token}`,
     },
@@ -26,12 +26,6 @@ export const getFeatureCars = async () => {
   const cars = await res.json();
   return cars;
 };
-// export const getAllCars = async () => {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars`);
-//   const cars = await res.json();
-//   return cars;
-// };
-
 export const getAllCars = async (search = "", category = "") => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/cars?search=${search}&category=${category}`,
@@ -39,7 +33,6 @@ export const getAllCars = async (search = "", category = "") => {
       cache: "no-store",
     }
   );
-
   const cars = await res.json();
   return cars;
 };
@@ -53,7 +46,6 @@ export const getSingleCar = async (id, token) => {
   const car = await res.json();
   return car;
 };
-
 export const updatedCar = async (id, token, data) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/cars/${id}`, {
     method: "PATCH",

@@ -34,7 +34,7 @@ const EditModal = ({ car }) => {
     <div>
       <Modal>
         <Button variant="secondary">
-          <Edit /> Edit car
+          <Edit /> Edit
         </Button>
         <Modal.Backdrop>
           <Modal.Container placement="auto">

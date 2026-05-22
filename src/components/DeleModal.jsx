@@ -21,7 +21,7 @@ const DeleModal = ({ car }) => {
   return (
     <div>
       <AlertDialog>
-        <Button variant="danger">Delete</Button>
+        <Button variant="danger">Cancel</Button>
         <AlertDialog.Backdrop>
           <AlertDialog.Container>
             <AlertDialog.Dialog className="sm:max-w-[400px]">

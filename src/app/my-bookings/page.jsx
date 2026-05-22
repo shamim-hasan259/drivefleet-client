@@ -8,10 +8,9 @@ const MyBookingsCarPage = async () => {
   const { token } = await auth.api.getToken({
     headers: await headers(),
   });
-  console.log(token);
+  // console.log(token);
   const data = await getAllBooking(token);
-  console.log(data);
-
+  // console.log(data);
   return (
     <section className="py-10 bg-neutral-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
