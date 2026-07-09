@@ -3,7 +3,7 @@
 A full-stack Car Rental Platform where users can explore cars, book vehicles, and manage their own car listings with secure authentication and modern UI.
 
 ---
-server side reop : https://github.com/shamim-hasan259/drivefeet-server.git
+server side repo : https://github.com/shamim-hasan259/drivefeet-server.git
 
 ---
 
